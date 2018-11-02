@@ -18,10 +18,9 @@ Download the certificate of the external resource  and keep the certificate in t
 Test:
 
 1) Integration tests
-  Integration tests are written for the ChampionShipService with out having any external dependency for it to be deterministic. Although a Unit test would suffice for the same thing loading the spring config
+  Integration tests are written for the ChampionShipService and ChampionShipController with out having any external dependency for it to be deterministic. Although a Unit test would suffice for the same thing loading the spring config
   heps to find any bean related issue early.
 
-  TODO: integration test using mock mvn.
 
 2) Unit Tests
    Unit tests written for ExternalChampionShipServiceImpl and ChampionShipController

@@ -32,19 +32,19 @@ public class ChampionShipControllerTest {
     List<Team> teams;
 
     @Before
-    public void setUp() throws ChampionShipException {
-        // given
+    public void setUp() {
         championShipController = new ChampionShipController(championShipService) ;
+    }
 
+    @Test
+    public void shouldForwardToTheIndexViewWithModelPopulatedOnSuccess() throws ChampionShipException {
+        // given
         driverList = new ArrayList<>();
         when(championShipService.getTopDrivers(10)).thenReturn(driverList);
 
         teams = new ArrayList<>();
         when(championShipService.getTopTeams(5)).thenReturn(teams);
-    }
 
-    @Test
-    public void shouldForwardThrRightViewWithModelPopulated() throws ChampionShipException {
         ModelMap modelMap = new ModelMap();
         // when
         String viewName = championShipController.getTopDriverStandinds(modelMap);
@@ -54,6 +54,16 @@ public class ChampionShipControllerTest {
         Assert.assertThat(modelMap , Matchers.is(modelMap));
         Assert.assertThat(modelMap.get("driverStandings") , Matchers.is(driverList));
         Assert.assertThat(modelMap.get("teamStandings") , Matchers.is(driverList));
+
+    }
+
+    @Test
+    public void shouldForwardToTheErrorViewOnFailure() {
+        // when
+        String viewName = championShipController.onException();
+
+        // then
+        Assert.assertThat("Error", Matchers.is(viewName));
 
     }
 
