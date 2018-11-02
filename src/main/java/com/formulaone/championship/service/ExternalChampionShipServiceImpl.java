@@ -19,9 +19,9 @@ import java.net.URI;
 @Profile(value = "production")
 public class ExternalChampionShipServiceImpl implements ExternalChampionShipService {
 
-    private String url;
+    private final String url;
 
-    private HttpClient httpClient;
+    private final HttpClient httpClient;
 
     @Autowired
     public ExternalChampionShipServiceImpl(@Value(value = "${f1.fansite.url}") String url,

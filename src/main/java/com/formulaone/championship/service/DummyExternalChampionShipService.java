@@ -5,8 +5,6 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.io.FileInputStream;
-
 @Profile(value = "test")
 @Service
 public class DummyExternalChampionShipService implements ExternalChampionShipService {

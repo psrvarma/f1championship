@@ -18,7 +18,7 @@ import java.util.List;
 @Controller
 public class ChampionShipController {
 
-    private ChampionShipService championShipService;
+    private final ChampionShipService championShipService;
 
     @Autowired
     public ChampionShipController(ChampionShipService championShipService) {
