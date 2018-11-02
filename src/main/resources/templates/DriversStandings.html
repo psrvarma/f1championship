@@ -1,0 +1,9 @@
+
+    <h3>Top 10 drivers with ratings</h3>
+    <table th:each="driver: ${driverStandings}">
+        <tr>
+            <td th:text="${driver.name}" />
+            <td th:text="${driver.totalPoints}" />
+        </tr>
+    </table>
+

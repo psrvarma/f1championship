@@ -1,0 +1,9 @@
+
+<h3>Top 5 Teams</h3>
+
+<table th:each="team: ${teamStandings}">
+    <tr>
+        <td width="" th:text="${team.name}" />
+        <td th:text="${team.totalPoints}" />
+    </tr>
+</table>
